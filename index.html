@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricardo Ontaneda | Cartography & GIS Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Ricardo Ontaneda</h1>
+            <p class="subtitle">Cartography MSc · GIS & Spatial Data Science · Environmental Engineering · MBA</p>
+            <p class="bio">
+                Specializing in interactive web mapping, spatial analysis, 3D terrain visualization, and location
+                intelligence.
+            </p>
+            <div class="hero-links">
+                <a href="https://github.com/YOUR-USERNAME" target="_blank" class="btn">GitHub</a>
+                <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" class="btn btn-outline">LinkedIn</a>
+                <a href="mailto:ricardontaneda@gmail.com" class="btn btn-outline">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="projects-section">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="webmap">Web Mapping</button>
+                    <button class="filter-btn" data-filter="3d">3D & Terrain</button>
+                    <button class="filter-btn" data-filter="spatial">Spatial Analysis</button>
+                </div>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <article class="project-card" data-category="webmap">
+                    <div class="card-content">
+                        <span class="category-tag">Web Mapping & Socioeconomic Index</span>
+                        <h3>Which Spain is Calling You?</h3>
+                        <p>
+                            Interactive destination decision guide combining Google Earth Engine green space metrics and
+                            normalized socioeconomic indices across Spanish cities.
+                        </p>
+                        <div class="tech-stack">
+                            <span>D3.js</span>
+                            <span>Google Earth Engine</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" target="_blank">Live Demo →</a>
+                            <a href="#" target="_blank">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card" data-category="webmap">
+                    <div class="card-content">
+                        <span class="category-tag">Cartographic Storytelling</span>
+                        <h3>Sought Accountability</h3>
+                        <p>
+                            Spatial network and flight manifest visualization analyzing movement logs and contact
+                            distributions through custom vector tiles.
+                        </p>
+                        <div class="tech-stack">
+                            <span>MapLibre GL JS</span>
+                            <span>Maputnik</span>
+                            <span>QGIS</span>
+                            <span>ArcGIS Online</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" target="_blank">Live Map →</a>
+                            <a href="#" target="_blank">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card" data-category="webmap">
+                    <div class="card-content">
+                        <span class="category-tag">Accessible LBS Prototype</span>
+                        <h3>LumenPath (ViennaSync)</h3>
+                        <p>
+                            Accessible Location-Based Service web application integrating haptic and audio feedback for
+                            urban route planning in Vienna.
+                        </p>
+                        <div class="tech-stack">
+                            <span>JavaScript</span>
+                            <span>Web Audio API</span>
+                            <span>Leaflet</span>
+                            <span>UX/UI</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" target="_blank">Prototype →</a>
+                            <a href="#" target="_blank">Documentation</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card" data-category="3d">
+                    <div class="card-content">
+                        <span class="category-tag">3D Terrain Rendering</span>
+                        <h3>Austrian Alps DEM Visualization</h3>
+                        <p>
+                            High-resolution 3D topographic relief and terrain modeling workflow of the Hoher Dachstein
+                            region using digital elevation models.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Blender</span>
+                            <span>BlenderGIS</span>
+                            <span>QGIS</span>
+                            <span>DEM</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" target="_blank">Gallery →</a>
+                            <a href="#" target="_blank">Workflow</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Ricardo Ontaneda. Built with HTML, CSS & GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
